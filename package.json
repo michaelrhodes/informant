@@ -1,0 +1,20 @@
+{
+  "name": "informant",
+  "version": "0.0.0",
+  "description": "informant is a tiny form validation helper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michaelrhodes/informant"
+  },
+  "keywords": ["form", "validate", "validation", "tiny", "light"],
+  "author": "Michael Rhodes",
+  "license": "MIT",
+  "homepage": "https://github.com/michaelrhodes/informant",
+  "bugs": {
+    "url": "https://github.com/michaelrhodes/informant/issues"
+  }
+}
