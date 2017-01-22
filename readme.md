@@ -37,7 +37,7 @@ informant({ el: '.message', min: 10, max: 140 })
 
 ##### match
 
-Accepts either a String or RegExp.
+Accepts either a String, RegExp, or Function.
 
 ```js
 informant({ el: '#name', match: 'John' })
@@ -45,4 +45,9 @@ informant({ el: '#name', match: 'John' })
 
 informant({ el: '#name', match: /^[a-zA-Z \-]+$/ })
 > { name: { match: false, value: 'susan69' } }
+
+informant({ el: '.message', match: function (value) {
+  return values.indexOf('Love,\n') !== -1
+})
+> { message: { match: true, value: 'Hope you’re well.\n\nLove,\nDad' } }
 ```

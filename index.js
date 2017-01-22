@@ -63,12 +63,13 @@ function object (root, obj, out) {
 
   // Run checks
   var chars = value.length
+  var mtype = type(obj.match)
   if (obj.min) out[name].min = chars >= obj.min
   if (obj.max) out[name].max = chars <= obj.max
   if (obj.match) out[name].match = !!(
-    type(obj.match) === 'regexp' ?
-      value.match(obj.match) :
-      value === obj.match
+    mtype === 'regexp' ? value.match(obj.match) :
+    mtype === 'function' ? obj.match(value) :
+    value === obj.match
   )
 
   out[name].value = value
