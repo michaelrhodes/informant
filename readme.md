@@ -30,6 +30,8 @@ Accepts objects with an el property and any of the rules: min, max, and match.
 
 ##### min / max
 
+Both expect integers specifying the min/max number of characters the value may contain.
+
 ```js
 informant({ el: '.message', min: 10, max: 140 })
 > { message: { min: false, max: true, value: 'Hi' }}
@@ -37,7 +39,7 @@ informant({ el: '.message', min: 10, max: 140 })
 
 ##### match
 
-Accepts either a String, RegExp, or Function.
+Accepts either a String, RegExp, or boolean-returning Function.
 
 ```js
 informant({ el: '#name', match: 'John' })
