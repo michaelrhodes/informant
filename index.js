@@ -26,6 +26,7 @@ function nodelist (root, nl, out) {
 }
 
 function node (root, n, out) {
+  if (!n.id) return out
   var name = n.id, value = val(n)
   out[name] = typeof value == 'string' ?
     value !== '' && { value: value } :
