@@ -79,7 +79,7 @@ function object (root, obj, out) {
 function val (el) {
   return /(radio|checkbox)/.test(el.type) ?
     el.checked :
-    el.value.trim()
+    trim(el.value)
 }
 
 function type (input) {
@@ -90,4 +90,8 @@ function type (input) {
 
   var node = /node|element/.test(type)
   return node ? 'node' : type
+}
+
+function trim (str) {
+  return str.replace(/^\s+|\s+$/g, '')
 }
