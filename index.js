@@ -78,9 +78,11 @@ function object (root, obj, out) {
 }
 
 function val (el) {
-  return /(radio|checkbox)/.test(el.type) ?
-    el.checked :
+  return (
+    el.type === 'checkbox' ? el.checked :
+    el.type === 'radio' ? el.checked && trim(el.value) :
     trim(el.value)
+  )
 }
 
 function type (input) {
